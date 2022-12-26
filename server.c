@@ -6,12 +6,10 @@
 /*   By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:34:29 by mkhalil           #+#    #+#             */
-/*   Updated: 2022/12/26 21:25:05 by mkhalil          ###   ########.fr       */
+/*   Updated: 2022/12/26 21:50:49 by mkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include "libft/libft.h"
 #include "minitalk.h"
 
 static void	handle_message(int signal)

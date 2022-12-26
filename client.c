@@ -6,12 +6,10 @@
 /*   By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:34:12 by mkhalil           #+#    #+#             */
-/*   Updated: 2022/12/26 21:41:49 by mkhalil          ###   ########.fr       */
+/*   Updated: 2022/12/26 21:48:37 by mkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include "libft/libft.h"
 #include "minitalk.h"
 
 static int	check_pid(char *str)
