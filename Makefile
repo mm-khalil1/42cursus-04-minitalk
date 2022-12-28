@@ -24,20 +24,19 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-start:
+all:
 		make -C libft
-		cp libft/libft.a .
-		make all
+		make start
 
-all: $(SERVER) $(CLIENT)
+start: $(SERVER) $(CLIENT)
 
-$(NAME): start
+$(NAME): all
 
 $(SERVER): 
-		$(CC) $(CFLAGS) $(SRCSV) libft.a -o $(SERVER)
+		$(CC) $(CFLAGS) $(SRCSV) libft/libft.a -o $(SERVER)
 
 $(CLIENT): 
-		$(CC) $(CFLAGS) $(SRCCL) libft.a -o $(CLIENT)
+		$(CC) $(CFLAGS) $(SRCCL) libft/libft.a -o $(CLIENT)
 
 clean:	
 	rm -f $(OBJSV) $(OBJCL)
