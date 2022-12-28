@@ -12,12 +12,12 @@
 
 #include "minitalk.h"
 
-static void	handle_message(int signal)
+static void	handle_message(int signum)
 {
 	static int	bit;
 	static int	c;
 
-	if (signal == SIGUSR1)
+	if (signum == SIGUSR1)
 		c |= (0x80 >> bit);
 	bit++;
 	if (bit == 8)
@@ -28,15 +28,16 @@ static void	handle_message(int signal)
 	}
 }
 
-int	main()
+int	main(int ac, char **av)
 {
 	int	pid;
 
-	// if (ac != 1)
-	// {
-	// 	ft_putstr_fd("server: invalid arguments!\n", 1);
-	// 	return (0);
-	// }
+	(void)av;
+	if (ac != 1)
+	{
+		ft_putstr_fd("server: invalid arguments!\n", 1);
+		return (0);
+	}
 	pid = getpid();
 	ft_putstr_fd("PID: ", 1);
 	ft_putnbr_fd(pid, 1);
