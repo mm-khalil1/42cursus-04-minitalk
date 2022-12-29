@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/26 16:34:03 by mkhalil           #+#    #+#             */
-/*   Updated: 2022/12/26 19:19:25 by mkhalil          ###   ########.fr       */
+/*   Created: 2022/12/29 13:13:26 by mkhalil           #+#    #+#             */
+/*   Updated: 2022/12/29 13:13:53 by mkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	MINITALK_H
+#ifndef MINITALK_H
 # define MINITALK_H
 
 # include <signal.h>

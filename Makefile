@@ -6,11 +6,11 @@
 #    By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/26 20:03:13 by mkhalil           #+#    #+#              #
-#    Updated: 2022/12/26 21:39:01 by mkhalil          ###   ########.fr        #
+#    Updated: 2022/12/29 13:16:28 by mkhalil          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = minitalk
 SERVER = server
 CLIENT = client
 
@@ -22,21 +22,21 @@ OBJCL = $(SRCCL:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS += -Wall -Wextra -Werror
 
-all:
+all: $(NAME)
+
+$(NAME): 
 		make -C libft
 		make start
 
 start: $(SERVER) $(CLIENT)
 
-$(NAME): all
+$(SERVER): $(OBJSV)
+		$(CC) $(CFLAGS) $(OBJSV) libft/libft.a -o $(SERVER)
 
-$(SERVER): 
-		$(CC) $(CFLAGS) $(SRCSV) libft/libft.a -o $(SERVER)
-
-$(CLIENT): 
-		$(CC) $(CFLAGS) $(SRCCL) libft/libft.a -o $(CLIENT)
+$(CLIENT): $(OBJCL)
+		$(CC) $(CFLAGS) $(OBJCL) libft/libft.a -o $(CLIENT)
 
 clean:	
 	rm -f $(OBJSV) $(OBJCL)

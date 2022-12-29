@@ -6,7 +6,7 @@
 /*   By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:34:12 by mkhalil           #+#    #+#             */
-/*   Updated: 2022/12/26 21:48:37 by mkhalil          ###   ########.fr       */
+/*   Updated: 2022/12/29 13:12:41 by mkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	check_pid(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i] != '\0' && ft_isdigit(str[i]))
+	while (str[i] != '\0' && ft_isdigit(str[i]))
 		i++;
 	if (str[i] == '\0' && i > 0)
 		return (1);
@@ -39,7 +39,7 @@ static void	send_char(int pid, int c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(10000);
+		usleep(100);
 		bit = bit >> 1;
 	}
 }
@@ -58,7 +58,7 @@ int	main(int ac, char **av)
 		return (0);
 	pid = ft_atoi(av[1]);
 	i = 0;
-	while(av[2][i] != '\0')
+	while (av[2][i] != '\0')
 		send_char(pid, av[2][i++]);
 	send_char(pid, '\0');
 	send_char(pid, '\n');
