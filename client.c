@@ -6,7 +6,7 @@
 /*   By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:34:12 by mkhalil           #+#    #+#             */
-/*   Updated: 2022/12/29 13:12:41 by mkhalil          ###   ########.fr       */
+/*   Updated: 2022/12/31 13:50:09 by mkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	main(int ac, char **av)
 	i = 0;
 	while (av[2][i] != '\0')
 		send_char(pid, av[2][i++]);
-	send_char(pid, '\0');
-	send_char(pid, '\n');
+	send_char(pid, '\0'); 
 	return (0);
 }
