@@ -6,7 +6,7 @@
 /*   By: mkhalil <mkhalil@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:34:12 by mkhalil           #+#    #+#             */
-/*   Updated: 2022/12/31 13:50:09 by mkhalil          ###   ########.fr       */
+/*   Updated: 2022/12/31 20:21:02 by mkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,8 @@ static int	check_pid(char *str)
 	while (str[i] != '\0' && ft_isdigit(str[i]))
 		i++;
 	if (str[i] == '\0' && i > 0)
-		return (1);
-	else
-	{
-		ft_putstr_fd("client: invalid process ID!\n", 1);
-		return (0);
-	}
+		return (ft_atoi(str));
+	return (-1);
 }
 
 static void	send_char(int pid, int c)
@@ -54,9 +50,12 @@ int	main(int ac, char **av)
 		ft_putstr_fd("client: invalid number of arguments!\n", 1);
 		return (0);
 	}
-	if (!check_pid(av[1]))
+	pid = check_pid(av[1]);
+	if (pid <= 0)
+	{
+		ft_putstr_fd("client: invalid process ID!\n", 1);
 		return (0);
-	pid = ft_atoi(av[1]);
+	}
 	i = 0;
 	while (av[2][i] != '\0')
 		send_char(pid, av[2][i++]);
