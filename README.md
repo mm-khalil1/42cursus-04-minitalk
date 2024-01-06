@@ -39,3 +39,8 @@ This compiles the server (server) and client (client) executables.
 ```
 
 Replace [SERVER_PID] with the server's process ID (displayed when starting the server) and "Your Message Here" with the desired message.
+
+
+
+minitalk Walkthrough:
+https://github.com/mlanca-c/Minitalk/wiki
